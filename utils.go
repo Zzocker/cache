@@ -9,15 +9,21 @@ func isKeyTypeValid(key interface{}) bool {
 		return false
 	}
 	switch reflect.TypeOf(key).Kind() {
-	case reflect.Invalid, reflect.Uintptr, reflect.Complex64, reflect.Complex128, reflect.Array, reflect.Chan, reflect.Func, reflect.Interface, reflect.Map, reflect.Ptr, reflect.Slice, reflect.UnsafePointer:
+	case reflect.Invalid, reflect.Uintptr,
+		reflect.Complex64, reflect.Complex128,
+		reflect.Array, reflect.Chan, reflect.Func,
+		reflect.Interface, reflect.Map, reflect.Ptr,
+		reflect.Slice, reflect.UnsafePointer:
 		return false
 	}
+
 	return true
 }
 
 // node : of a doubly circular linked list.
 type node struct {
 	data       DataHandler
+	key        interface{}
 	prev, next *node
 }
 
