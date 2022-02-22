@@ -1,4 +1,3 @@
-// Cache provide thread safe LRU cache implementation
 package cache
 
 import (
